@@ -21,5 +21,22 @@ namespace ModernCalculator {
         public MainWindow() {
             InitializeComponent();
         }
+
+        #region Pasek Górny
+
+        private void pasek_LewyPrzyciskMyszy(object sender, MouseButtonEventArgs e) {
+            this.DragMove();
+        }
+
+        private void close_Btn_Click(object sender, RoutedEventArgs e) {
+            this.Close();
+        }
+
+        private void minimize_Btn_Click(object sender, RoutedEventArgs e) {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        #endregion
+
     }
 }

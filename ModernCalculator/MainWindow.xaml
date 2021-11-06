@@ -13,7 +13,7 @@
         WindowStyle="None"
         >
     <Grid>
-        <!--#region Definicja Siatki-->
+        <!--#region Definicja Siatki Głównej-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -22,8 +22,9 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="75"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -32,8 +33,20 @@
         </Grid.RowDefinitions>
         <!--#endregion-->
         
+        <!--#region Obramówka-->
+
+        <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="9" Stroke="#FF707070" Margin="0"/>
+
+        <!--#endregion-->
+        
+        <!--#region Pasek wyboru trybu-->
+        
+        <!-- TODO: Wprowadzić możliwość zmiany kalkulatora na Programisty itp -->
+        
+        <!--#endregion-->
+        
         <!--#region Pasek górny-->
-        <Grid Grid.Row="0" Grid.ColumnSpan="4">
+        <Grid Grid.Row="0" Grid.ColumnSpan="4" MouseLeftButtonDown="pasek_LewyPrzyciskMyszy">
             <!--#region Definicja Kolumna Paska-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -43,47 +56,47 @@
             <Grid.RowDefinitions>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <!--#endregion-->
 
-            <Rectangle Margin="1" Grid.ColumnSpan="3" Stroke="#FF707070"/>
+            <Rectangle Margin="0" Grid.ColumnSpan="3" Stroke="#FF707070"/>
             <TextBlock Margin="5" Foreground="WhiteSmoke" VerticalAlignment="Center" Grid.Column="0">Calculator</TextBlock>
 
-            <Button Grid.Column="1" Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="10" BorderThickness="1" Margin="3">_</Button>
-            <Button Grid.Column="2" Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="10" BorderThickness="1" Margin="3">X</Button>
-            
-            <!--#endregion-->
+            <Button Name="minimize_Btn" Grid.Column="1" Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="10" BorderThickness="1" Margin="0" Click="minimize_Btn_Click">_</Button>
+            <Button Name="close_Btn" Grid.Column="2" Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="10" BorderThickness="1" Margin="0" Click="close_Btn_Click">X</Button>
+
         </Grid>
         <!--#endregion-->
         
         <!--#region Wyświetlanie obliczeń-->
-        <TextBox Background="#1c1c1c" Foreground="#4a4a4a" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="2" TextWrapping="NoWrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" BorderThickness="0" FontSize="30">0</TextBox>
-        <TextBox Background="#1c1c1c" Foreground="WhiteSmoke" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Margin="2" TextWrapping="NoWrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" BorderThickness="0" FontSize="50">0</TextBox>
+        <TextBox Background="#1c1c1c" Foreground="#4a4a4a" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Margin="2" TextWrapping="NoWrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" BorderThickness="0" FontSize="30">0</TextBox>
+        <TextBox Background="#1c1c1c" Foreground="WhiteSmoke" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Margin="2" TextWrapping="NoWrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" BorderThickness="0" FontSize="50">0</TextBox>
         <!--#endregion-->
         
         <!--#region Przyciski-->
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="3" Grid.Column="0">CE</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="3" Grid.Column="1">ⁿ√</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="3" Grid.Column="2">xⁿ</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="3" Grid.Column="3">/</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="4" Grid.Column="0">CE</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="4" Grid.Column="1">ⁿ√</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="4" Grid.Column="2">xⁿ</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="4" Grid.Column="3">/</Button>
 
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="4" Grid.Column="0">7</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="4" Grid.Column="1">8</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="4" Grid.Column="2">9</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="4" Grid.Column="3">*</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="5" Grid.Column="0">7</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="5" Grid.Column="1">8</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="5" Grid.Column="2">9</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="5" Grid.Column="3">*</Button>
 
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="5" Grid.Column="0">4</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="5" Grid.Column="1">5</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="5" Grid.Column="2">6</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="5" Grid.Column="3">-</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="6" Grid.Column="0">4</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="6" Grid.Column="1">5</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="6" Grid.Column="2">6</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="6" Grid.Column="3">-</Button>
 
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="6" Grid.Column="0">1</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="6" Grid.Column="1">2</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="6" Grid.Column="2">3</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="6" Grid.Column="3">+</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="7" Grid.Column="0">1</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="7" Grid.Column="1">2</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="7" Grid.Column="2">3</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="7" Grid.Column="3">+</Button>
 
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="7" Grid.Column="0">C</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="7" Grid.Column="1">0</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="7" Grid.Column="2">,</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="7" Grid.Column="3">=</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="8" Grid.Column="0">C</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="8" Grid.Column="1">0</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="8" Grid.Column="2">,</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="8" Grid.Column="3">=</Button>
         <!--#endregion-->
     </Grid>
 </Window>
