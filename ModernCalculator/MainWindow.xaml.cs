@@ -46,82 +46,102 @@ namespace ModernCalculator {
 
         #region Przyciski 1-9 + 0
         private void btn_1_Click(object sender, RoutedEventArgs e) {
-            if(current_TextBox.Text == "0") {
-                current_TextBox.Text = "1";
-            } else {
-                current_TextBox.Text += "1";
+            if (current_TextBox.Text.Length <= 9) {
+                if (current_TextBox.Text == "0") {
+                    current_TextBox.Text = "1";
+                } else {
+                    current_TextBox.Text += "1";
+                }
             }
         }
 
         private void btn_2_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text == "0") {
-                current_TextBox.Text = "2";
-            } else {
-                current_TextBox.Text += "2";
+            if (current_TextBox.Text.Length <= 9) {
+                if (current_TextBox.Text == "0") {
+                    current_TextBox.Text = "2";
+                } else {
+                    current_TextBox.Text += "2";
+                }
             }
         }
 
         private void btn_3_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text == "0") {
-                current_TextBox.Text = "3";
-            } else {
-                current_TextBox.Text += "3";
+            if (current_TextBox.Text.Length <= 9) {
+                if (current_TextBox.Text == "0") {
+                    current_TextBox.Text = "3";
+                } else {
+                    current_TextBox.Text += "3";
+                }
             }
         }
 
         private void btn_4_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text == "0") {
-                current_TextBox.Text = "4";
-            } else {
-                current_TextBox.Text += "4";
+            if (current_TextBox.Text.Length <= 9) {
+                if (current_TextBox.Text == "0") {
+                    current_TextBox.Text = "4";
+                } else {
+                    current_TextBox.Text += "4";
+                }
             }
         }
 
         private void btn_5_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text == "0") {
-                current_TextBox.Text = "5";
-            } else {
-                current_TextBox.Text += "5";
+            if (current_TextBox.Text.Length <= 9) {
+                if (current_TextBox.Text == "0") {
+                    current_TextBox.Text = "5";
+                } else {
+                    current_TextBox.Text += "5";
+                }
             }
         }
 
         private void btn_6_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text == "0") {
-                current_TextBox.Text = "6";
-            } else {
-                current_TextBox.Text += "6";
+            if (current_TextBox.Text.Length <= 9) {
+                if (current_TextBox.Text == "0") {
+                    current_TextBox.Text = "6";
+                } else {
+                    current_TextBox.Text += "6";
+                }
             }
         }
 
         private void btn_7_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text == "0") {
-                current_TextBox.Text = "7";
-            } else {
-                current_TextBox.Text += "7";
+            if (current_TextBox.Text.Length <= 9) {
+                if (current_TextBox.Text == "0") {
+                    current_TextBox.Text = "7";
+                } else {
+                    current_TextBox.Text += "7";
+                }
             }
         }
 
         private void btn_8_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text == "0") {
-                current_TextBox.Text = "8";
-            } else {
-                current_TextBox.Text += "8";
+            if (current_TextBox.Text.Length <= 9) {
+                if (current_TextBox.Text == "0") {
+                    current_TextBox.Text = "8";
+                } else {
+                    current_TextBox.Text += "8";
+                }
             }
         }
 
         private void btn_9_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text == "0") {
-                current_TextBox.Text = "9";
-            } else {
-                current_TextBox.Text += "9";
+            if (current_TextBox.Text.Length <= 9) {
+                if (current_TextBox.Text == "0") {
+                    current_TextBox.Text = "9";
+                } else {
+                    current_TextBox.Text += "9";
+                }
             }
         }
 
         private void btn_0_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text == "0") {
-                current_TextBox.Text = "0";
-            } else {
-                current_TextBox.Text += "0";
+            if (current_TextBox.Text.Length <= 9) {
+                if (current_TextBox.Text == "0") {
+                    current_TextBox.Text = "0";
+                } else {
+                    current_TextBox.Text += "0";
+                }
             }
         }
         #endregion
@@ -165,17 +185,19 @@ namespace ModernCalculator {
             full_TextBox.Text = "0";
         }
         private void btn_Coma_Click(object sender, RoutedEventArgs e) {
-            bool IsComaInText = false;
-            foreach(char znaczek in current_TextBox.Text) {
-                if(znaczek == 0x2e) {
-                    IsComaInText = false;
-                    return;
-                } else {
-                    IsComaInText = true;
+            if (current_TextBox.Text.Length <= 9) {
+                bool IsComaInText = false;
+                foreach (char znaczek in current_TextBox.Text) {
+                    if (znaczek == 0x2e) {
+                        IsComaInText = false;
+                        return;
+                    } else {
+                        IsComaInText = true;
+                    }
                 }
-            }
-            if (IsComaInText) {
-                current_TextBox.Text += ".";
+                if (IsComaInText) {
+                    current_TextBox.Text += ".";
+                }
             }
         }
         #endregion
@@ -183,5 +205,8 @@ namespace ModernCalculator {
 
         }
 
+        private void lenghtCheck_Click(object sender, RoutedEventArgs e) {
+            MessageBox.Show(current_TextBox.Text.Length.ToString());
+        }
     }
 }

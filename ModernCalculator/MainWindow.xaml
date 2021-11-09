@@ -67,9 +67,15 @@
         </Grid>
         <!--#endregion-->
         
+        <!--#region Debug-->
+
+        <Button Name="lenghtCheck" Grid.Row="1" FontSize="10" Click="lenghtCheck_Click">Check Lenght</Button>
+        
+        <!--#endregion-->
+        
         <!--#region Wyświetlanie obliczeń-->
-        <TextBox Name="full_TextBox" IsReadOnly="True" Background="#1c1c1c" Foreground="#4a4a4a" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Margin="2" TextWrapping="NoWrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" BorderThickness="0" FontSize="30">0</TextBox>
-        <TextBox MaxLength="5" Name="current_TextBox" IsReadOnly="True" Background="#1c1c1c" Foreground="WhiteSmoke" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Margin="2" TextWrapping="NoWrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" BorderThickness="0" FontSize="50">0</TextBox>
+        <TextBox Name="full_TextBox" IsReadOnly="True" Background="#1c1c1c" Foreground="#4a4a4a" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Margin="5" TextWrapping="NoWrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" BorderThickness="0" FontSize="30">0</TextBox>
+        <TextBox MaxLength="10" Name="current_TextBox" IsReadOnly="True" Background="#1c1c1c" Foreground="WhiteSmoke" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Margin="2" TextWrapping="NoWrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" BorderThickness="0" FontSize="50">0</TextBox>
         <!--#endregion-->
         
         <!--#region Przyciski-->
