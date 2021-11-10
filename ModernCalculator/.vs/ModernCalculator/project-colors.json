@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "dc5351e9-90a4-4f39-b804-711dfad943fc": {
+      "ProjectGuid": "dc5351e9-90a4-4f39-b804-711dfad943fc",
+      "DisplayName": "ModernCalculator",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

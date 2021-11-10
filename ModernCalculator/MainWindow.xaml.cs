@@ -46,101 +46,51 @@ namespace ModernCalculator {
 
         #region Przyciski 1-9 + 0
         private void btn_1_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text.Length <= 9) {
-                if (current_TextBox.Text == "0") {
-                    current_TextBox.Text = "1";
-                } else {
-                    current_TextBox.Text += "1";
-                }
-            }
+            NumberWrite(1);
         }
 
         private void btn_2_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text.Length <= 9) {
-                if (current_TextBox.Text == "0") {
-                    current_TextBox.Text = "2";
-                } else {
-                    current_TextBox.Text += "2";
-                }
-            }
+            NumberWrite(2);
         }
 
         private void btn_3_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text.Length <= 9) {
-                if (current_TextBox.Text == "0") {
-                    current_TextBox.Text = "3";
-                } else {
-                    current_TextBox.Text += "3";
-                }
-            }
+            NumberWrite(3);
         }
 
         private void btn_4_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text.Length <= 9) {
-                if (current_TextBox.Text == "0") {
-                    current_TextBox.Text = "4";
-                } else {
-                    current_TextBox.Text += "4";
-                }
-            }
+            NumberWrite(4);
         }
 
         private void btn_5_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text.Length <= 9) {
-                if (current_TextBox.Text == "0") {
-                    current_TextBox.Text = "5";
-                } else {
-                    current_TextBox.Text += "5";
-                }
-            }
+            NumberWrite(5);
         }
 
         private void btn_6_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text.Length <= 9) {
-                if (current_TextBox.Text == "0") {
-                    current_TextBox.Text = "6";
-                } else {
-                    current_TextBox.Text += "6";
-                }
-            }
+            NumberWrite(6);
         }
 
         private void btn_7_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text.Length <= 9) {
-                if (current_TextBox.Text == "0") {
-                    current_TextBox.Text = "7";
-                } else {
-                    current_TextBox.Text += "7";
-                }
-            }
+            NumberWrite(7);
         }
 
         private void btn_8_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text.Length <= 9) {
-                if (current_TextBox.Text == "0") {
-                    current_TextBox.Text = "8";
-                } else {
-                    current_TextBox.Text += "8";
-                }
-            }
+            NumberWrite(8);
         }
 
         private void btn_9_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text.Length <= 9) {
-                if (current_TextBox.Text == "0") {
-                    current_TextBox.Text = "9";
-                } else {
-                    current_TextBox.Text += "9";
-                }
-            }
+            NumberWrite(9);
         }
 
         private void btn_0_Click(object sender, RoutedEventArgs e) {
-            if (current_TextBox.Text.Length <= 9) {
-                if (current_TextBox.Text == "0") {
-                    current_TextBox.Text = "0";
-                } else {
-                    current_TextBox.Text += "0";
+            NumberWrite(0);
+        }
+
+        private void NumberWrite(float numberToWrite){
+            if (current_TextBox.Text.Length <= 9){
+                if (current_TextBox.Text == "0"){
+                    current_TextBox.Text = numberToWrite.ToString();
+                }else{
+                    current_TextBox.Text += numberToWrite.ToString();
                 }
             }
         }
@@ -148,30 +98,35 @@ namespace ModernCalculator {
 
         #region Znaki obliczeniowie;
         private void btn_Sum_Click(object sender, RoutedEventArgs e) {
-
+            Operation("+");
         }
-
         private void btn_Substract_Click(object sender, RoutedEventArgs e) {
-
+            Operation("-");
         }
-
         private void btn_Multiply_Click(object sender, RoutedEventArgs e) {
-
+            Operation("*");
         }
-
         private void btn_Devide_Click(object sender, RoutedEventArgs e) {
-
+            Operation("/");
         }
-
         private void btn_Power_Click(object sender, RoutedEventArgs e) {
-
+            Operation("^");
         }
-
         private void btn_Root_Click(object sender, RoutedEventArgs e) {
-
+            Operation("√");
+        }
+        private void Operation(string operationChar) {
+            if (znak == null) {
+                znak = operationChar;
+                liczba1 = float.Parse(current_TextBox.Text);
+                full_TextBox.Text = current_TextBox.Text + znak;
+                current_TextBox.Text = "0";
+            } else {
+                Equal();
+            }
         }
         #endregion
-        
+
         #region Czyszczenie + przecinek
         private void btn_C_Click(object sender, RoutedEventArgs e) {
             current_TextBox.Text = "0";
@@ -196,17 +151,43 @@ namespace ModernCalculator {
                     }
                 }
                 if (IsComaInText) {
-                    current_TextBox.Text += ".";
+                    current_TextBox.Text += ",";
                 }
             }
         }
         #endregion
-        private void btn_Equal_Click(object sender, RoutedEventArgs e) {
 
+        #region EqualSection
+        private void btn_Equal_Click(object sender, RoutedEventArgs e) {
+            Equal();
         }
 
+        private void Equal()
+        {
+            switch (znak){
+            }
+        }
+
+        #endregion
+        #region Debug
         private void lenghtCheck_Click(object sender, RoutedEventArgs e) {
             MessageBox.Show(current_TextBox.Text.Length.ToString());
         }
+
+        private void liczba1Check_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(liczba1.ToString());
+        }
+
+        private void liczba2Check_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(liczba2.ToString());
+        }
+
+        private void znakCheck_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(znak);
+        }
+        #endregion
     }
 }

@@ -69,7 +69,10 @@
         
         <!--#region Debug-->
 
-        <Button Name="lenghtCheck" Grid.Row="1" FontSize="10" Click="lenghtCheck_Click">Check Lenght</Button>
+        <Button Name="lenghtCheck" Grid.Row="1" Grid.Column="0" FontSize="10" Click="lenghtCheck_Click">Check Lenght</Button>
+        <Button Name="liczba1Check" Grid.Row="1" Grid.Column="1" FontSize="10" Click="liczba1Check_Click">Liczba1 Check</Button>
+        <Button Name="liczba2Check" Grid.Row="1" Grid.Column="2" FontSize="10" Click="liczba2Check_Click">Liczba2 Check</Button>
+        <Button Name="znakCheck" Grid.Row="1" Grid.Column="3" FontSize="10" Click="znakCheck_Click">Znak Check</Button>
         
         <!--#endregion-->
         
@@ -101,7 +104,7 @@
 
         <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="8" Grid.Column="0" Name="btn_C" Click="btn_C_Click">C</Button>
         <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="8" Grid.Column="1" Name="btn_0" Click="btn_0_Click">0</Button>
-        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="8" Grid.Column="2" Name="btn_Coma" Click="btn_Coma_Click">.</Button>
+        <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="8" Grid.Column="2" Name="btn_Coma" Click="btn_Coma_Click">,</Button>
         <Button Background="#1c1c1c" Foreground="WhiteSmoke" FontSize="25" BorderThickness="1" Margin="1" Grid.Row="8" Grid.Column="3" Name="btn_Equal" Click="btn_Equal_Click">=</Button>
         <!--#endregion-->
     </Grid>
